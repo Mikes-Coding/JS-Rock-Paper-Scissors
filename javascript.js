@@ -1,3 +1,6 @@
+const playerSelection = prompt("Pick rock, paper or scissors");
+const computerSelection = getComputerChoice();
+
 function getComputerChoice() {
     const options = ['rock', 'paper', 'scissors'];
     const randomIndex = Math.floor(Math.random() * options.length);
@@ -29,8 +32,31 @@ function getComputerChoice() {
       return "Invalid input. Please enter 'rock', 'paper', or 'scissors'.";
     }
   }
-   
-  const playerSelection = "rock";
-  const computerSelection = getComputerChoice();
   
-  console.log(playRound(playerSelection, computerSelection));
+  function game() {
+    let playerScore = 0;
+    let computerScore = 0;
+  
+    for (let i = 0; i < 5; i++) {
+      const playerSelection = prompt("Pick rock, paper or scissors");
+      const computerSelection = getComputerChoice();
+  
+      const result = playRound(playerSelection, computerSelection);
+      console.log(result);
+  
+      if (result === "Player 1 wins!") {
+        playerScore++;
+      } else if (result === "Player 2 wins!") {
+        computerScore++;
+      }
+    }
+  
+    console.log("Final score:");
+    console.log("Player: " + playerScore);
+    console.log("Computer: " + computerScore);
+  
+    return { player: playerScore, computer: computerScore };
+  }
+  
+  game();
+  
