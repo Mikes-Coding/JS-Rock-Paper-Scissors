@@ -1,5 +1,29 @@
-const playerSelection = prompt("Pick rock, paper or scissors");
-const computerSelection = getComputerChoice();
+const scissorButton = document.getElementById("scissorButton");
+const paperButton = document.getElementById("paperButton");
+const rockButton = document.getElementById("rockButton");
+
+let playerSelection;
+
+scissorButton.addEventListener("click", function() {
+  playerSelection = scissorButton.value;
+  const computerSelection = getComputerChoice();
+  const result = playRound(playerSelection, computerSelection);
+  console.log(result);
+});
+
+paperButton.addEventListener("click", function() {
+  playerSelection = paperButton.value;
+  const computerSelection = getComputerChoice();
+  const result = playRound(playerSelection, computerSelection);
+  console.log(result);
+});
+
+rockButton.addEventListener("click", function() {
+  playerSelection = rockButton.value;
+  const computerSelection = getComputerChoice();
+  const result = playRound(playerSelection, computerSelection);
+  console.log(result);
+});
 
 function getComputerChoice() {
     const options = ['rock', 'paper', 'scissors'];
@@ -37,6 +61,8 @@ function getComputerChoice() {
     let playerScore = 0;
     let computerScore = 0;
   
+
+    /*
     for (let i = 0; i < 5; i++) {
       const playerSelection = prompt("Pick rock, paper or scissors");
       const computerSelection = getComputerChoice();
@@ -50,7 +76,8 @@ function getComputerChoice() {
         computerScore++;
       }
     }
-  
+  */
+
     console.log("Final score:");
     console.log("Player: " + playerScore);
     console.log("Computer: " + computerScore);
