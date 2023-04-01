@@ -32,7 +32,7 @@ function getComputerChoice() {
       return "Invalid input. Please enter 'rock', 'paper', or 'scissors'.";
     }
   }
-  
+
   function game() {
     let playerScore = 0;
     let computerScore = 0;
